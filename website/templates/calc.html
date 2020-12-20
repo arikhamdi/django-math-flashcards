@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'content' %}
+<center>
+    
+    <img src="{% static '' %}images/{{num_1}}.png" alt=""> 
+        <b style="font-size: 80px;"> {{operation}} </b> <img src="{% static '' %}images/{{num_2}}.png" alt="">
+    
+        <br><br>
+    {% if message %}
+        <div class="alert alert-{{color}}" role="alert">
+            <h2>{{message}}</h2>
+        </div>
+    {% endif %}
+
+    
+    
+    <br><br>
+    <form method="POST" class="row g-1">
+            {% csrf_token %}
+            <input type="hidden" name="old_num_1" value="{{ num_1 }}">
+            <input type="hidden" name="old_num_2" value="{{ num_2 }}">
+            <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Type your answer here" name="answer">
+            </div>
+            <div class="col-md-6">
+                <button type="submit" class="form-control btn btn-primary">Submit</button>
+            </div>
+      </form>
+</center>
+{% endblock %}
+    
