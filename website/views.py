@@ -62,14 +62,3 @@ def calc(request, op):
         'num_2' : num_2
     })
 
-# def add(request):
-#     return render(request, 'add.html')
-
-# def subtract(request):
-#     return render(request, 'subtract.html')
-
-# def multiply(request):
-#     return render(request, 'multiply.html')
-
-# def divide(request):
-#     return render(request, 'divide.html')
